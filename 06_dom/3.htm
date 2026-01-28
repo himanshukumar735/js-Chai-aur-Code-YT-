@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    const div = document.createElement('div')   // we have created a div which is visible in console
+    console.log(div.outerHTML);
+    div.className = "main"
+    // div.id = "myId"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")    // cant we just write " div.title = "generated title" " like we did in the case of setting class and id
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+
+    // div.innerText = "Chai aur code"
+
+    const addText = document.createTextNode("Chai aur code")
+    div.appendChild(addText)        // both method does the same thing but thier working mechanism is different
+
+    document.body.appendChild(div)      // now we are telling the document to add this div into its body
+    console.log(div.outerHTML);
+
+    // make this a function
+
+</script>
+
+
+</html>
