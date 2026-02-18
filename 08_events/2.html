@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sync</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+
+    const sayHitesh = function () {
+        console.log("Hitesh")
+    }
+
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = "Best JS series"
+
+    }
+
+    setTimeout(sayHitesh, 2000) // Hitesh will be printed in the console after 2 s when the page loads
+    // setTimeout(changeText, 2000)     // Text will change from "chai aur code" to "best js course" after the 2 s of time when the page loads
+
+    // const changeMe = setTimeout(changeText, 2000)
+    // clearTimeout(changeMe)   // now we are not allowing the h1("Chai aur Code") to change to ("Best JS series")
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(changeMe)
+        console.log("Stopped")
+    })
+
+
+
+
+
+
+</script>
+
+</html>

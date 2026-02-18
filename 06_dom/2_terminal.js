@@ -20,7 +20,7 @@ document.getElementById('title').setAttribute('class', 'testHeading')      // th
 
 document.getElementById('title').setAttribute('class', 'testheading newTestHeading')      // this will change the existing class(one) from 'heading' to 'testHeading' and 'newTestHeading'
 
-const title = document.getElementById('title')      // we are storing the result into title variable for easy access and the value stored is "        <h1 id="title" class="heading">DOM learning on Chai aur Code</h1>"
+const title = document.getElementById('title')      // we are storing the result into title variable for easy access and the value stored is " <h1 id="title" class="heading">DOM learning on Chai aur Code</h1>"
 
 title.style.backgroundColor = 'red'         // now we have change the background color of heading 'DOM learning on Chai aur Code, to red
 
