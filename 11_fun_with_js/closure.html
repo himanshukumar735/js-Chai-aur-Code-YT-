@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure and chai</title>
+</head>
+
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    function init() {
+        var name = "Mozilla";
+        function displayName() {                // displayName() is the inner function, that forms a closure
+            console.log(name); // use variable declared in the parent function
+        }
+        displayName();
+    }
+    init();
+
+    function outer() {
+        let userName = "Himanshu"
+        // console.log("Outer", secret)        //Obviously we will get the error bcs it cant access the secret defined in the inner function bcs of scope
+
+        function inner() {
+            let secret = "123"
+            console.log("inner", userName)
+        }
+
+        function innerTwo() {
+            let secret = "123"
+            console.log("innerTwo", userName)
+            console.log(secret)
+        }
+
+        inner()
+        innerTwo()
+    }
+
+    outer()
+    console.log("Too outer", userName)
+
+
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+</script>
+
+<script>
+    // document.getElementById("orange").onclick = function () {
+    //     document.body.style.backgroundColor = 'orange'
+    // }
+
+    // document.getElementById("green").onclick = function () {
+    //     document.body.style.backgroundColor = 'green'
+    // }
+
+    // what if we need to make more numbers of such buttons
+
+    function clickHandler(color) {
+        // document.body.style.backgroundColor = '${color}'
+
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange")
+    document.getElementById("green").onclick = clickHandler("green")
+</script>
+
+</html>
